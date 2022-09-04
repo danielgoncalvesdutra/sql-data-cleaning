@@ -36,22 +36,13 @@ you delete anything, you should check to see how many rows contain this erroneou
 you don’t end up deleting 50% of your data. If there are too many (for instance, 20% of your rows have the incorrect 70 value)
 then you would want to check back in with the sales manager to inquire if these should be deleted or if the 70 should be updated
 to another value. Use the query below to count how many rows you would be deleting:*/
-
 SELECT
-
     COUNT(*) AS num_of_rows_to_delete
-
 FROM
-
     cars.car_info
-
 WHERE
-
     compression_ratio = 70;
 
 /*Turns out there is only one row with the erroneous 70 value. So you can delete that row using this query:*/
-
 DELETE cars.car_info
-
 WHERE compression_ratio = 70;
-
